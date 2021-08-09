@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>File Keeper</title>
+    <link rel="icon" href="https://img.icons8.com/emoji/96/000000/locked-with-key.png"/>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .center{
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        div.formulario{
+            display: block;
+            text-align: center;
+        }
+
+        form{
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Adicione aqui seu arquivo:</h1>
+    <div class="formulario">
+        <form method="POST" action="/upload" enctype="multipart/form-data">
+            <input type="file" name="inputFile"/>
+            <br><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <br>
+    <h1>Tabela de arquivos</h1>
+
+    <table class="center">
+        <thead>
+            
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Formato</th>
+            <th scope="col">Baixar</th>
+
+        </tr>
+
+        {% for file in files %}
+
+        <tbody id="myTable">
+            <tr>
+                <td>{{ file.id }}</td>
+                <td>{{ file.name }}</td>
+                <td>{{ file.formato }}</td>
+                <td>
+                    <a href="/download/{{ file.id }}">Clique para baixar</a>
+                </td>
+            </tr>
+
+        {% endfor %}
+    </table>
+
+
+    
+</body>
+</html>
