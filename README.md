@@ -21,9 +21,6 @@ Existe a possibilidade de deletar o arquivo também, somente clicando em deletar
 
 ![image](https://user-images.githubusercontent.com/60951410/128862496-dbc2ed92-913a-486a-a4ad-71e74f8f676d.png)
 
-Em caso de sucesso, receberá a seguinte mensagem:
-
-![image](https://user-images.githubusercontent.com/60951410/128862525-2a2e614c-eacd-4e7d-8a2d-09d87d20d036.png)
 
 E pronto, tudo estará como no inicio:
 
