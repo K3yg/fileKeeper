@@ -30,3 +30,11 @@ def download(id):
 
     enviar_arquivo = send_file(BytesIO(file_data.data), attachment_filename= f'arquivo.{file_data.formato}', as_attachment=True)
     return enviar_arquivo
+
+@app.route('/delete/<int:id>')
+def delete(id):
+    file_data = FileContents.query.filter_by(id=id).first()
+    db.session.delete(file_data)
+    db.session.commit()
+    return 'Arquivo: ' + file_data.name + ' removido com sucesso.' + '<br><a href="/">Voltar</a>'
+

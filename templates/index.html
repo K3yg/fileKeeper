@@ -55,7 +55,7 @@
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
             <th scope="col">Formato</th>
-            <th scope="col">Baixar</th>
+            <th scope="col">Ações</th>
 
         </tr>
 
@@ -67,7 +67,9 @@
                 <td>{{ file.name }}</td>
                 <td>{{ file.formato }}</td>
                 <td>
-                    <a href="/download/{{ file.id }}">Clique para baixar</a>
+                    <a href="/download/{{ file.id }}">Baixar</a>
+                    <a href="/delete/{{ file.id }}">Deletar</a>
+
                 </td>
             </tr>
 
