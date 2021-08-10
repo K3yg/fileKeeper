@@ -39,11 +39,18 @@
     <h1>Adicione aqui seu arquivo:</h1>
     <div class="formulario">
         <form method="POST" action="/upload" enctype="multipart/form-data">
+            <!-- Inserir arquivo -->
             <input type="file" name="inputFile"/>
+            <br><br>
+            <!-- Abrir a camera -->
+            <input type="file" accept="image/*" capture="camera" />
+            
             <br><br>
             <button type="submit">Enviar</button>
         </form>
     </div>
+
+    
 
     <br>
     <h1>Tabela de arquivos</h1>
