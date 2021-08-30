@@ -13,12 +13,22 @@ def index():
 def upload():
     file = request.files['inputFile']
 
-    formato = file.filename.split('.')[-1]
-    nome = file.filename.split('.')[0]
+    picFile = request.files['picFile']
 
-    novoArquivo = FileContents(name=nome, formato=formato, data=file.read())
-    db.session.add(novoArquivo)
-    db.session.commit()
+
+    if file.filename != '':
+        formato = file.filename.split('.')[-1]
+        nome = file.filename.split('.')[0]
+        novoArquivo = FileContents(name=nome, formato=formato, data=file.read())
+        db.session.add(novoArquivo)
+        db.session.commit()
+    else:
+        formato = picFile.filename.split('.')[-1]
+        nome = picFile.filename.split('.')[0]
+        novoArquivo = FileContents(name=nome, formato=formato, data=picFile.read())
+        db.session.add(novoArquivo)
+        db.session.commit()
+
 
     return 'Arquivo: ' + nome + ' com a extensão: ' + formato + ' salvo no banco de dados.' + '<br><a href="/">Voltar</a>' 
 
